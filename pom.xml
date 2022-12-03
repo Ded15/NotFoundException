@@ -62,7 +62,7 @@
                                 <rule>
                                     <limits>
                                         <limit>
-                                            <counter>LINE</counter>
+                                            <counter>COMPLEXITY</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>100%</minimum>
                                         </limit>
