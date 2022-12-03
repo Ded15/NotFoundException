@@ -24,7 +24,7 @@ public class ProductRepository {
         products = tmp;
     }
 
-    public Product[] findAll() {//сохранение продукта
+    public Product[] findAll() {
 
         return products;
     }
