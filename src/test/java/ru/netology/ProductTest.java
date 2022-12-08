@@ -2,6 +2,8 @@ package ru.netology;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.netology.repository.NotFoundException;
+import ru.netology.repository.ProductManager;
 
 public class ProductTest {
     Book product1 = new Book(11, "Гарри Поттер", 1_200, "Джоан Роулинг");
@@ -60,5 +62,15 @@ public class ProductTest {
         Product[] actual = manager.searchBy("Гарри Поттер");
 
         Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void notFoundId () {
+        ProductRepository repo = new ProductRepository();
+        repo.save(product1);
+        repo.save(product2);
+        repo.save(product3);
+        repo.save(product4);
+
+        Assertions.assertThrows(NotFoundException.class,()->{repo.removeById(100);});
     }
 }
